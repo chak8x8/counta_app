@@ -1,6 +1,8 @@
+import 'package:counta_app/screens/carouselscreen/carouselscreen.dart';
 import 'package:counta_app/screens/homescreen/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:counta_app/screens/splashscreen/mainscreen.dart';
+import 'package:counta_app/screens/introductionscreen/introductionscreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainScreen(),
+      home: CarouselScreen(),
     );
   }
 }
