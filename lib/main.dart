@@ -1,3 +1,4 @@
+import 'package:counta_app/screens/accountscreen/createscreen.dart';
 import 'package:counta_app/screens/carouselscreen/carouselscreen.dart';
 import 'package:counta_app/screens/homescreen/homescreen.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CarouselScreen(),
+      home: CreateScreen(),
     );
   }
 }
