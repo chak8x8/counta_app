@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:passwordfield/passwordfield.dart';
+import 'package:counta_app/screens/accountscreen/resetpasswordscreen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -49,11 +50,12 @@ class LoginScreen extends StatelessWidget {
               right: 20.0,
               left: 20.0,
               top: 8.0,
-              bottom: 8.0,
+              bottom: 50.0,
             ),
             child: TextFormField(
               decoration: InputDecoration(
                 hintText: 'Password',
+                suffixIcon: Icon(Icons.search,),
                 border: OutlineInputBorder(
                   borderSide: BorderSide(width: 5.0),
                 ),
@@ -73,6 +75,15 @@ class LoginScreen extends StatelessWidget {
               ),
               color: Colors.black,
             ),
+          ),
+          FlatButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ResetPasswordScreen()),
+                );
+              },
+            child: Text('Forgot Password?'),
           ),
         ],
       ),
