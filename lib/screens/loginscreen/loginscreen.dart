@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:passwordfield/passwordfield.dart';
-import 'package:counta_app/screens/accountscreen/resetpasswordscreen.dart';
+import 'package:counta_app/screens/accountscreen/forgetpasswordscreen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -8,8 +8,11 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.keyboard_backspace, color: Colors.black,),
-          onPressed: (){
+          icon: Icon(
+            Icons.keyboard_backspace,
+            color: Colors.black,
+          ),
+          onPressed: () {
             Navigator.of(context).pop();
           },
         ),
@@ -26,8 +29,13 @@ class LoginScreen extends StatelessWidget {
           Center(
               child: Padding(
                 padding: const EdgeInsets.only(top: 40.0, bottom: 20.0),
-                child:
-                Text('Welcome Back', style: TextStyle(color: Color(0xff7D7E89), fontSize: 20.0,),),
+                child: Text(
+              'Welcome Back',
+              style: TextStyle(
+                color: Color(0xff7D7E89),
+                fontSize: 20.0,
+              ),
+            ),
           )),
           Padding(
             padding: const EdgeInsets.only(
@@ -55,7 +63,9 @@ class LoginScreen extends StatelessWidget {
             child: TextFormField(
               decoration: InputDecoration(
                 hintText: 'Password',
-                suffixIcon: Icon(Icons.search,),
+                suffixIcon: Icon(
+                  Icons.help_outline,
+                ),
                 border: OutlineInputBorder(
                   borderSide: BorderSide(width: 5.0),
                 ),
@@ -76,13 +86,13 @@ class LoginScreen extends StatelessWidget {
               color: Colors.black,
             ),
           ),
-          FlatButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ResetPasswordScreen()),
-                );
-              },
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ForgotPasswordScreen()),
+              );
+            },
             child: Text('Forgot Password?'),
           ),
         ],
