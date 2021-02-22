@@ -12,10 +12,13 @@ class ForgotPasswordScreen extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        actions: [
+        actions: <Widget>[
           Padding(
             padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.clear),
+            child: GestureDetector(
+              onTap: (){},
+              child: Icon(Icons.clear, color: Colors.black,),
+            ),
           ),
         ],
       ),
