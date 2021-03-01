@@ -6,6 +6,7 @@ import 'package:counta_app/screens/splashscreen/mainscreen.dart';
 import 'package:counta_app/screens/introductionscreen/introductionscreen.dart';
 import 'package:counta_app/screens/loginscreen//loginscreen.dart';
 import 'package:counta_app/screens/loginscreen//loginsuccessfullyscreen.dart';
+import 'package:counta_app/screens/splashscreen/onboardingscreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginSuccessfullyScreen(),
+      home: CarouselScreen(),
     );
   }
 }

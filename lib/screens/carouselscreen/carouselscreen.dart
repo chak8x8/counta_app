@@ -1,78 +1,66 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:transformer_page_view/transformer_page_view.dart';
 
 
-class CarouselScreen extends StatelessWidget {
+class CarouselScreen extends StatefulWidget {
+  @override
+  _CarouselScreenState createState() => _CarouselScreenState();
+}
+
+class _CarouselScreenState extends State<CarouselScreen> {
+
+  final List<String> images = [
+    "Images/browse.png",
+    "Images/friends.png",
+    "Images/inventory.png"
+  ];
+
+  final List<String> text0 = [
+    "Organise and track your belongings",
+    "Share your items with friends and family",
+    "Help your community grow",
+  ];
+
+  final IndexController controller = IndexController();
+
+  int _slideIndex = 0;
+
   @override
   Widget build(BuildContext context) {
+
+    TransformerPageView transformerPageView = TransformerPageView(
+      pageSnapping: true,
+      onPageChanged: (index){
+        setState(() {
+         this._slideIndex = index;
+        });
+      },
+      loop: false,
+      controller: controller,
+      transformer: PageTransformerBuilder(
+          builder: (Widget child, TransformInfo info) {
+            return Material(
+              color: Colors.white,
+              elevation: 8.0,
+              textStyle: TextStyle(color: Colors.white),
+              borderRadius: BorderRadius.circular(12.0),
+              child: Container(
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('Images/backgroundimage.png'),
+                  ),
+                ),
+              ),
+            );
+          }
+      ),
+      itemCount: 4,
+    );
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text("GFG Slider"),
-      ),
-      body: ListView(
-        children: [
-          CarouselSlider(
-            items: [
-
-              //1st Image of Slider
-              Column(
-                children: [
-                  Text('Organise and track your belongings'),
-                  Container(
-                    margin: EdgeInsets.all(6.0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8.0),
-                      image: DecorationImage(
-                        image: AssetImage('images/inventory.png'),
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-
-              //2nd Image of Slider
-              Container(
-                margin: EdgeInsets.all(6.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  image: DecorationImage(
-                    image: AssetImage('images/friends.png'),
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ),
-
-              //3rd Image of Slider
-              Container(
-                margin: EdgeInsets.all(6.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  image: DecorationImage(
-                    image: AssetImage('images/browse.png'),
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ),
-
-
-            ],
-
-            //Slider Container properties
-            options: CarouselOptions(
-              height: MediaQuery.of(context).size.height,
-              enlargeCenterPage: false,
-              autoPlay: true,
-              aspectRatio: 16 / 9,
-              autoPlayCurve: Curves.fastOutSlowIn,
-              enableInfiniteScroll: true,
-              autoPlayAnimationDuration: Duration(milliseconds: 800),
-              viewportFraction: 0.8,
-
-            ),
-          ),
-        ],
-      ),
+      body: transformerPageView,
+      backgroundColor: Colors.white,
 
     );
   }
