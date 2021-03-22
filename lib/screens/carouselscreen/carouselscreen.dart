@@ -49,7 +49,7 @@ class _CarouselScreenState extends State<CarouselScreen> {
                 height: 60.0,
                 initialPage: 0,
                 enlargeCenterPage: false,
-                autoPlay: true,
+                autoPlay: false,
                 reverse: false,
                 enableInfiniteScroll: true,
                 autoPlayInterval: Duration(seconds: 2),
@@ -85,7 +85,7 @@ class _CarouselScreenState extends State<CarouselScreen> {
                 height: 400.0,
                 initialPage: 0,
                 enlargeCenterPage: false,
-                autoPlay: true,
+                autoPlay: false,
                 reverse: false,
                 enableInfiniteScroll: true,
                 autoPlayInterval: Duration(seconds: 2),
@@ -106,7 +106,7 @@ class _CarouselScreenState extends State<CarouselScreen> {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(imgUrl),
-                            fit: BoxFit.fill,
+                            fit: BoxFit.fitHeight,
                           ),
                         ),
                       );
@@ -134,7 +134,7 @@ class _CarouselScreenState extends State<CarouselScreen> {
                 )
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: map<Widget>(imgList, (index, url) {
+                  children: map <Widget>(imgList, (index, url) {
                     return Container(
                       width: 10.0,
                       height: 10.0,

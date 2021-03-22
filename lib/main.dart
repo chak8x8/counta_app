@@ -8,6 +8,7 @@ import 'package:counta_app/screens/introductionscreen/introductionscreen.dart';
 import 'package:counta_app/screens/loginscreen//loginscreen.dart';
 import 'package:counta_app/screens/loginscreen//loginsuccessfullyscreen.dart';
 import 'package:counta_app/screens/splashscreen/onboardingscreen.dart';
+import 'package:counta_app/screens/inventoryscreen/inventoryscreen.dart';
 
 void main() {
   runApp(MyApp());
