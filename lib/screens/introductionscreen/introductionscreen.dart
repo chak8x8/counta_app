@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 
-
 class OnBoardingPage extends StatefulWidget {
+
   @override
   _OnBoardingPageState createState() => _OnBoardingPageState();
 }

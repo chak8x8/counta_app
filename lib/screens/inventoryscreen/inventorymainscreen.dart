@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:counta_app/widgets/widgets.dart';
+import 'inventoryscreen.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class InventoryScreen extends StatefulWidget {
+class InventoryMainScreen extends StatefulWidget {
 
   @override
-  _InventoryScreenState createState() => _InventoryScreenState();
+  _InventoryMainScreenState createState() => _InventoryMainScreenState();
 }
 
-class _InventoryScreenState extends State<InventoryScreen> {
+class _InventoryMainScreenState extends State <InventoryMainScreen> {
   int _selectedIndex = 0;
 
   String _title;
 
   static List<Widget> _widgetOptions = <Widget>[
-    Column(
-      children: [
-        InventorySlider(),
-        BodyLayout(),
-      ],
-    ),
+    InventoryScreen(),
     Text('Borrow',
         style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
     Text('Add Items',
@@ -58,19 +54,18 @@ class _InventoryScreenState extends State<InventoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inventory'),
+        title: Text(_title, style: TextStyle(color: Colors.black),),
         backgroundColor: Colors.white,
       ),
-      body:
-          SingleChildScrollView(
-              child:
-              Center(child: _widgetOptions.elementAt(_selectedIndex))
+      body: SingleChildScrollView(
+          child:
+          Center(child: _widgetOptions.elementAt(_selectedIndex))
           ),
 
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Image.asset('images/inventoryicon.png'),
+            icon: Icon(FontAwesomeIcons.boxes),
             backgroundColor: Colors.white,
             label: '',
           ),
@@ -97,8 +92,9 @@ class _InventoryScreenState extends State<InventoryScreen> {
         ],
         type: BottomNavigationBarType.shifting,
         currentIndex: _selectedIndex,
+        unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.black,
-        iconSize: 40.0,
+        iconSize: 20.0,
         onTap: _onItemTapped,
         elevation: 5,
       ),
@@ -106,88 +102,6 @@ class _InventoryScreenState extends State<InventoryScreen> {
   }
 }
 
-class BodyLayout extends StatelessWidget {
-  @override
 
-
-
-  Widget build(BuildContext context) {
-    return _myListView(context);
-  }
-}
-
-Widget _myListView(BuildContext context){
-  return ListView(
-    shrinkWrap: true,
-      children: ListTile.divideTiles(
-        context: context,
-        tiles: [
-          ListTile(
-            leading: CircleAvatar(
-              child: Image.asset('images/clothingicon.png', fit: BoxFit.contain,),
-              maxRadius: 50,
-              backgroundColor: Color(0xffF6F6FD),
-            ),
-            title: Text('Clothing'),
-            subtitle: Text('21 items'),
-          ),
-          ListTile(
-            leading: CircleAvatar(
-              child: Image.asset('images/bookicon.png', fit: BoxFit.contain,),
-              maxRadius: 50,
-              backgroundColor: Color(0xffF6F6FD),
-            ),
-            title: Text('Books'),
-            subtitle: Text('6 items'),
-          ),
-          ListTile(
-            leading: CircleAvatar(
-              child: Image.asset('images/gamesicon.png', fit: BoxFit.contain,),
-              maxRadius: 50,
-              backgroundColor: Color(0xffF6F6FD),
-            ),
-            title: Text('Games'),
-            subtitle: Text('21 items'),
-          ),
-          ListTile(
-            leading: CircleAvatar(
-              child: Image.asset('images/officeicon.png', fit: BoxFit.contain,),
-              maxRadius: 50,
-              backgroundColor: Color(0xffF6F6FD),
-            ),
-            title: Text('Office'),
-            subtitle: Text('21 items'),
-          ),
-          ListTile(
-            leading: CircleAvatar(
-              child: Image.asset('images/bedroomicon.png', fit: BoxFit.contain,),
-              maxRadius: 50,
-              backgroundColor: Color(0xffF6F6FD),
-            ),
-            title: Text('Bedroom'),
-            subtitle: Text('21 items'),
-          ),
-          ListTile(
-            leading: CircleAvatar(
-              child: Image.asset('images/generalicon.png', fit: BoxFit.contain,),
-              maxRadius: 50,
-              backgroundColor: Color(0xffF6F6FD),
-            ),
-            title: Text('General'),
-            subtitle: Text('21 items'),
-          ),
-          ListTile(
-            leading: CircleAvatar(
-              child: Image.asset('images/clothingicon.png', fit: BoxFit.contain,),
-              maxRadius: 50,
-              backgroundColor: Color(0xffF6F6FD),
-            ),
-            title: Text('Clothing'),
-            subtitle: Text('21 items'),
-          ),
-        ],
-      ).toList(),
-  );
-}
 
 

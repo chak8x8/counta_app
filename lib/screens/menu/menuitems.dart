@@ -11,12 +11,10 @@ class MenuItems extends StatefulWidget {
 }
 
 class _MenuItemsState extends State <MenuItems> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
   String _title;
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text('Inventory',
-        style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+  static const List <Widget> _widgetOptions = <Widget> [
     Text('Borrow',
         style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
     Text('Add Items',
@@ -38,8 +36,6 @@ class _MenuItemsState extends State <MenuItems> {
     setState(() {
       _selectedIndex = index;
       switch (index){
-        case 0: {_title = 'Inventory';}
-        break;
         case 1: {_title = 'Borrow';}
         break;
         case 2: {_title = 'Add Items';}
@@ -91,8 +87,9 @@ class _MenuItemsState extends State <MenuItems> {
           ],
         type: BottomNavigationBarType.shifting,
         currentIndex: _selectedIndex,
+        unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.black,
-        iconSize: 40.0,
+        iconSize: 10.0,
         onTap: _onItemTapped,
         elevation: 5,
       ),

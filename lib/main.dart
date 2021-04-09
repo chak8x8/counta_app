@@ -8,7 +8,10 @@ import 'package:counta_app/screens/introductionscreen/introductionscreen.dart';
 import 'package:counta_app/screens/loginscreen//loginscreen.dart';
 import 'package:counta_app/screens/loginscreen//loginsuccessfullyscreen.dart';
 import 'package:counta_app/screens/splashscreen/onboardingscreen.dart';
+import 'package:counta_app/screens/inventoryscreen/inventorymainscreen.dart';
+import 'package:counta_app/widgets/inventoryslider.dart';
 import 'package:counta_app/screens/inventoryscreen/inventoryscreen.dart';
+import 'package:counta_app/screens/inventoryscreen/inventorygridscreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MenuItems(),
+      home: InventoryMainScreen(),
     );
   }
 }
