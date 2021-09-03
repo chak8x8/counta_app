@@ -2,7 +2,7 @@ import 'package:counta_app/utils/mybottomsheet.dart';
 import 'package:flutter/material.dart';
 import 'package:counta_app/widgets/widgets.dart';
 import 'package:counta_app/utils//mybottomsheet.dart';
-import 'package:counta_app/screens/books/booksmainscreen.dart';
+import 'package:counta_app/screens/booksscreen/booksmainscreen.dart';
 
 class InventoryScreen extends StatelessWidget {
   @override

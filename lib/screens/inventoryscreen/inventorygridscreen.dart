@@ -7,6 +7,7 @@ class InventoryGridScreen extends StatefulWidget {
 }
 
 class _InventoryGridScreenState extends State<InventoryGridScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Center(

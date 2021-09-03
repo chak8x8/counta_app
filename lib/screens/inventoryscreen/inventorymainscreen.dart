@@ -65,7 +65,7 @@ class _InventoryMainScreenState extends State <InventoryMainScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.boxes),
+            icon: Icon(FontAwesomeIcons.boxOpen),
             backgroundColor: Colors.white,
             label: '',
           ),
